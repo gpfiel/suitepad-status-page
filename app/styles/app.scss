@@ -1,4 +1,6 @@
 @import "ember-cli-bootstrap-4/bootstrap";
+@import "./components/status-checker";
+
 html, body {
 	overflow: auto;
 	height: 100%;
@@ -14,5 +16,4 @@ html, body {
   background-color: #FFF;
   border: 1px solid #000;
   border-radius: 5px;
-  height: 200px;
 }
