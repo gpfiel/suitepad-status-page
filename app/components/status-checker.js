@@ -4,7 +4,9 @@ import { inject as service } from '@ember/service';
 export default Component.extend({
   store: service(),
   classNames: 'status-checker',
+  
   checkList: null,
+  checkListPromise: null,
 
   init() {
     this._super(...arguments)
@@ -12,7 +14,8 @@ export default Component.extend({
   },
 
   loadData() {
-    this.get('store').findAll('check').then((data) => {
+    this.set('checkListPromise', this.get('store').findAll('check'))
+    this.get('checkListPromise').then((data) => {
       this.set('checkList', data)
     })
   },

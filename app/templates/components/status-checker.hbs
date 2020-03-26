@@ -1,20 +1,24 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">TOKEN</th>
-      <th scope="col">URL</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each checkList as |check|}}
+{{#if checkListPromise.isPending}}
+  {{loading}}
+{{else}}
+  <table class="table">
+    <thead>
       <tr>
-        <th scope="row">
-          <img class="icon-checker" src="{{check.favicon_url}}" alt="{{check.alias}}"/>
-        </th>
-        <th scope="row">{{check.token}}</th>
-        <th scope="row">{{check.url}}</th>
+        <th scope="col">#</th>
+        <th scope="col">TOKEN</th>
+        <th scope="col">URL</th>
       </tr>
-    {{/each}}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      {{#each checkList as |check|}}
+        <tr>
+          <th scope="row">
+            <img class="icon-checker" src="{{check.favicon_url}}" alt="{{check.alias}}"/>
+          </th>
+          <th scope="row">{{check.token}}</th>
+          <th scope="row">{{check.url}}</th>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{/if}}

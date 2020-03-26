@@ -1,5 +1,6 @@
 @import "ember-cli-bootstrap-4/bootstrap";
 @import "./components/status-checker";
+@import "./components/loading";
 
 html, body {
 	overflow: auto;
