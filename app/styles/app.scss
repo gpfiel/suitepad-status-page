@@ -18,3 +18,35 @@ html, body {
   border: 1px solid #000;
   border-radius: 5px;
 }
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.sorting-arrows {
+  height:30px;
+  width: 30px;
+  float: right;
+  span {
+    float: left;
+    height: 7px;
+    font-size: 20px;
+  }
+
+  &.active {
+    span {
+      &:first-child.hide {
+        color: white;
+      }
+      &:last-child.hide {
+        color: white;
+      }
+    }
+  }
+}

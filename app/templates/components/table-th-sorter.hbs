@@ -1,0 +1,7 @@
+<th scope="col" class="noselect" {{action sortBy}}>
+	{{yield}}
+	<div class="sorting-arrows {{if (eq key currentSortingProperty) "active" "inactive"}}">
+		<span class={{if reverse "hide"}}><i class="material-icons android">arrow_drop_up</i></span>
+    <span class={{if (not reverse) "hide"}}><i class="material-icons android">arrow_drop_down</i></span>
+	</div>
+</th>

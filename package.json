@@ -18,6 +18,7 @@
     "test": "ember test"
   },
   "devDependencies": {
+    "ember-truth-helpers": "^2.1.0",
     "ember-cli-bootstrap-4": "^0.6.1",
     "ember-cli-sass": "^7.2.0",
     "@ember/jquery": "^0.6.0",

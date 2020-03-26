@@ -10,5 +10,5 @@ export default Mixin.create({
 		return {
       'X-API-KEY': ENV.api_key
     };
-  }).volatile(),
+  })
 });

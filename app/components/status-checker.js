@@ -1,15 +1,19 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 import AuthorizerHeader from "suitepad-status-page/mixins/authorizer";
-import { computed, get, set } from '@ember/object';
+import SortData from "suitepad-status-page/mixins/sort-data";
+import { computed } from '@ember/object';
 import { A } from '@ember/array'
 
-export default Component.extend(AuthorizerHeader, {
+export default Component.extend(AuthorizerHeader, SortData, {
   store: service(),
   classNames: 'status-checker',
   
   checkList: null,
   checkListPromise: null,
+
+  currentSortingProperty: 'down',
+  currentSortingDirection: 'asc',
 
   currentSortingProperties: A(["down:asc"]),
 	sortedList: computed.sort('checkList', 'currentSortingProperties'),
