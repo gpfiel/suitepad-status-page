@@ -1,1 +1,18 @@
 @import "ember-cli-bootstrap-4/bootstrap";
+html, body {
+	overflow: auto;
+	height: 100%;
+  background-color: rgb(82, 86, 89);
+	.container-fluid {
+		height: 100%;
+	}
+}
+
+.updown-checker {
+  margin-top: 15px;
+  text-align: center;
+  background-color: #FFF;
+  border: 1px solid #000;
+  border-radius: 5px;
+  height: 200px;
+}
