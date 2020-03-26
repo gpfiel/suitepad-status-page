@@ -1,5 +1,6 @@
 import DS from 'ember-data';
 const { Model } = DS;
+import { computed } from '@ember/object';
 
 export default Model.extend({
   token: DS.attr('string'),
@@ -23,4 +24,8 @@ export default Model.extend({
   http_verb: DS.attr('string'),
   http_body: DS.attr('string'),
   ssl: DS.attr(),
+
+  uptime_formatted: computed('uptime', function() {
+    return this.get('uptime') < 100 ? this.get('uptime').toFixed(2) : this.get('uptime')
+  }),
 });

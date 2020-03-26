@@ -4,29 +4,27 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">ALIAS</th>
-        <th scope="col">TOKEN</th>
-        <th scope="col">URL</th>
+        {{!-- <th scope="col">#</th> --}}
+        <th scope="col">Service</th>
+        <th scope="col">Rolling Uptime for 30 days ⇓</th>
       </tr>
     </thead>
     <tbody>
       {{#each sortedList as |check|}}
         <tr>
-          <th scope="row">
+          {{!-- <th scope="row">
             {{#if check.favicon_url}}
               <img class="icon-checker" src={{check.favicon_url}} alt={{check.alias}}>
             {{else}}
               Not available
             {{/if}}
-          </th>
-          <th scope="row">
+          </th> --}}
+          <th>
             <a target="_blank" rel="noopener" href="{{website}}/checks/5bhp?api-key={{apiKey}}">
               {{check.alias}}
             </a>
           </th>
-          <th scope="row">{{check.token}}</th>
-          <th scope="row">{{check.url}}</th>
+          <th>{{check.uptime_formatted}}%</th>
         </tr>
       {{/each}}
     </tbody>
