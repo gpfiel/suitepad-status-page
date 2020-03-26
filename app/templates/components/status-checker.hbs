@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th scope="col">#</th>
+        <th scope="col">ALIAS</th>
         <th scope="col">TOKEN</th>
         <th scope="col">URL</th>
       </tr>
@@ -13,7 +14,16 @@
       {{#each checkList as |check|}}
         <tr>
           <th scope="row">
-            <img class="icon-checker" src="{{check.favicon_url}}" alt="{{check.alias}}"/>
+            {{#if check.favicon_url}}
+              <img class="icon-checker" src={{check.favicon_url}} alt={{check.alias}}>
+            {{else}}
+              Not available
+            {{/if}}
+          </th>
+          <th scope="row">
+            <a target="_blank" rel="noopener" href="{{website}}/checks/5bhp?api-key={{apiKey}}">
+              {{check.alias}}
+            </a>
           </th>
           <th scope="row">{{check.token}}</th>
           <th scope="row">{{check.url}}</th>

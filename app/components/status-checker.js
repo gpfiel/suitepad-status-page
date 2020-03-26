@@ -1,7 +1,8 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
+import AuthorizerHeader from "suitepad-status-page/mixins/authorizer";
 
-export default Component.extend({
+export default Component.extend(AuthorizerHeader, {
   store: service(),
   classNames: 'status-checker',
   

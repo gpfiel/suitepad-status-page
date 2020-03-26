@@ -24,6 +24,7 @@ module.exports = function(environment) {
   };
 
   ENV.api_url = 'https://updown.io/api'
+  ENV.website = 'https://updown.io/'
   ENV.api_key = 'ro-GVxtueJXTaJAa5SY3dhn'
 
   if (environment === 'development') {
