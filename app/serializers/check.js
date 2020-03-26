@@ -1,7 +1,6 @@
 import DS from 'ember-data'
-import NormalizeEmbeddedData from 'be-common-model/mixins/normalize-embedded-data'
 
-export default DS.RESTSerializer.extend(NormalizeEmbeddedData, {
+export default DS.RESTSerializer.extend({
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
     return this._super(store, primaryModelClass, payload, id, requestType);
   },
@@ -9,9 +8,8 @@ export default DS.RESTSerializer.extend(NormalizeEmbeddedData, {
     return this._super(store, primaryModelClass, payload, id, requestType);
   },
   normalizeArrayResponse(store, primaryModelClass, payload, id, requestType) {
-    payload.forEach((check => {
-      check.id = check.token;
-    }))
+    payload.forEach((check => { check.id = check.token; }))
+    payload = { checks: payload }
     return this._super(store, primaryModelClass, payload, id, requestType);
   }
 });
