@@ -23,6 +23,9 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.api_url = 'https://updown.io/api'
+  ENV.api_key = 'ro-GVxtueJXTaJAa5SY3dhn'
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
