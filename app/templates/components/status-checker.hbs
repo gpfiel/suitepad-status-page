@@ -23,7 +23,7 @@
               {{check.alias}}
             </a>
           </th>
-          <th>{{check.uptime_formatted}}%</th>
+          <th class="uptime-{{check.uptime_formatted.colour}}">{{check.uptime_formatted.value}}%</th>
         </tr>
       {{/each}}
     </tbody>

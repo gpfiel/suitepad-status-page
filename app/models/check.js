@@ -26,6 +26,18 @@ export default Model.extend({
   ssl: DS.attr(),
 
   uptime_formatted: computed('uptime', function() {
-    return this.get('uptime') < 100 ? this.get('uptime').toFixed(2) : this.get('uptime')
+    let colour = null;
+    
+    if (this.get('uptime') == 100 )
+      colour = 'green'
+    else if (this.get('uptime') > 50 )
+      colour = 'yellow'
+    else
+      colour = 'red'
+
+    return {
+      value: this.get('uptime') < 100 ? this.get('uptime').toFixed(2) : this.get('uptime'),
+      colour: colour
+    }
   }),
 });
