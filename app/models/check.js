@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 const { Model } = DS;
 import { computed } from '@ember/object';
+import moment from 'moment';
 
 export default Model.extend({
   token: DS.attr('string'),
@@ -27,7 +28,7 @@ export default Model.extend({
 
   uptime_formatted: computed('uptime', function() {
     let colour = null;
-    
+
     if (this.get('uptime') == 100 )
       colour = 'green'
     else if (this.get('uptime') > 50 )
@@ -38,6 +39,14 @@ export default Model.extend({
     return {
       value: this.get('uptime') < 100 ? this.get('uptime').toFixed(2) : this.get('uptime'),
       colour: colour
+    }
+  }),
+
+  down_since_formatted: computed('down_since', function() {
+    if (this.get('down_since') != null) {
+      return moment.utc(this.get('down_since')).local().format('MMM DD, YYYY HH:mm')
+    } else {
+      return ''
     }
   }),
 });

@@ -11,9 +11,12 @@ export default Component.extend(AuthorizerHeader, SortData, {
   
   checkList: null,
   checkListPromise: null,
+  checkSelected: null,
 
   currentSortingProperty: 'down',
   currentSortingDirection: 'asc',
+
+  displayCheckDetails: false,
 
   currentSortingProperties: A(["down:asc"]),
 	sortedList: computed.sort('checkList', 'currentSortingProperties'),
@@ -29,4 +32,15 @@ export default Component.extend(AuthorizerHeader, SortData, {
       this.set('checkList', data)
     })
   },
+
+  actions: {
+    showCheckView(check) {
+      this.set('displayCheckDetails', true)
+      this.set('checkSelected', check)
+    },
+    hideCheckView() {
+      this.set('displayCheckDetails', false)
+      this.set('checkSelected', null)
+    },
+  }
 });

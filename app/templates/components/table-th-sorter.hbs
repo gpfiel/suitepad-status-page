@@ -1,4 +1,4 @@
-<th scope="col" class="noselect" {{action sortBy}}>
+<th scope="col" class="noselect {{classes}}" {{action sortBy}}>
 	{{yield}}
 	<div class="sorting-arrows {{if (eq key currentSortingProperty) "active" "inactive"}}">
 		<span class={{if reverse "hide"}}><i class="material-icons android">arrow_drop_up</i></span>

@@ -1,16 +1,12 @@
 .status-checker {
   min-height: 300px;
-  .icon-checker {
-    height: 25px;
-    width: 25px;
-  }
-  .uptime-green {
+  .text-green {
     color: #008000;
   }
-  .uptime-yellow {
+  .text-yellow {
     color: #CCCC00;
   }
-  .uptime-red {
+  .text-red {
     color: #FF0000;
   }
 }

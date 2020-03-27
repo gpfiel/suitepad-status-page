@@ -1,0 +1,29 @@
+.check-view {
+  padding-top: 50px;
+  button.close {
+    position: absolute;
+    right: 30px;
+    top: 24px;
+    i {
+      font-size: 3rem;
+    }
+  }
+  .icon-check {
+    img {
+      height: 35px;;
+      width: 35px;;
+    }
+  }
+  .uptime-box {
+    color: grey;
+    i {
+      font-size: 4rem;
+    }
+    .percentage {
+      font-size: 2rem;
+    }
+  }
+  .divider {
+    border-right: 1px solid black;
+  }
+}

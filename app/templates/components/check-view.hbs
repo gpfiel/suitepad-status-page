@@ -1,0 +1,28 @@
+<div class="row">
+  <button class="close" {{action "close"}}><i class="material-icons large">close</i></button>
+  <div class="col-sm-4 icon-check text-center">
+    {{#if check.favicon_url}}
+      <img src={{check.favicon_url}} alt={{check.alias}}>
+    {{/if}}
+    <a target="_blank" rel="noopener" class="text-lowercase" href={{check.url}}>{{check.url}}</a>
+  </div>
+  <div class="col-sm-2 text-center uptime-box divider">
+    <i class="material-icons large text-{{check.uptime_formatted.colour}}">trending_up</i>
+    <br>
+    <span class="text-center percentage">{{check.uptime_formatted.value}}%</span>
+    <br>
+    <span class="text-center">Uptime</span>
+  </div>
+  <div class="col-sm-2 text-center uptime-box">
+    {{#if check.down}}
+      <i class="material-icons large text-red">pause_circle_outline</i>
+      <br><br>
+      <span>Down since: </span>
+      <span>{{check.down_since_formatted}}</span>
+    {{else}}
+      <i class="material-icons large text-green">play_circle_outline</i>
+      <br><br><br>
+      <span>Available</span>
+    {{/if}}
+  </div>
+</div>
