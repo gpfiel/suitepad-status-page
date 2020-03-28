@@ -7,6 +7,8 @@ import { A } from '@ember/array'
 
 export default Component.extend(AuthorizerHeader, SortData, {
   store: service(),
+  check: service(),
+
   classNames: 'status-checker',
   
   checkList: null,
@@ -27,7 +29,9 @@ export default Component.extend(AuthorizerHeader, SortData, {
   },
 
   loadData() {
-    this.set('checkListPromise', this.get('store').findAll('check'))
+    const request = this.get('check').getChecks()
+    this.get('check').getDecriptions()
+    this.set('checkListPromise', request)
     this.get('checkListPromise').then((data) => {
       this.set('checkList', data)
     })

@@ -13,7 +13,7 @@
     <br>
     <span class="text-center">Uptime</span>
   </div>
-  <div class="col-sm-2 text-center uptime-box">
+  <div class="col-sm-2 text-center uptime-box divider">
     {{#if check.down}}
       <i class="material-icons large text-red">pause_circle_outline</i>
       <br><br>
@@ -24,5 +24,8 @@
       <br><br><br>
       <span>Available</span>
     {{/if}}
+  </div>
+  <div class="col-sm-2 text-center">
+    {{show-description check.token}}
   </div>
 </div>

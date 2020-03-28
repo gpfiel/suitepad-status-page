@@ -16,13 +16,13 @@
         {{#each sortedList as |check|}}
           <tr>
             <th class="text-capitalize text-left">
-              <a target="_blank" rel="noopener" href="{{website}}/checks/5bhp?api-key={{apiKey}}">
+              <a target="_blank" rel="noopener" href="{{website}}/checks/{{check.token}}?api-key={{apiKey}}">
                 {{check.alias}}
               </a>
             </th>
             <th class="text-{{check.uptime_formatted.colour}} text-center">{{check.uptime_formatted.value}}%</th>
             <th >
-              <button {{action "showCheckView" check}} class="btn btn-secondary">details</button>
+              <button {{action "showCheckView" check}} class="btn btn-secondary">Details</button>
             </th>
           </tr>
         {{else}}

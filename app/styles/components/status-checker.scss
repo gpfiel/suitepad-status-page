@@ -1,4 +1,7 @@
 .status-checker {
+  overflow: hidden;
+  word-wrap: break-word;
+  
   min-height: 300px;
   .text-green {
     color: #008000;
