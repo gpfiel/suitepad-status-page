@@ -25,9 +25,12 @@ module.exports = function(environment) {
 
   ENV.api_url = 'https://updown.io/api'
   ENV.website = 'https://updown.io/'
-  ENV.api_key = 'ro-GVxtueJXTaJAa5SY3dhn'
+  ENV.check_descriptions = 'https://gist.githubusercontent.com/Rio517/c523873cd4495456a88cac8f1860461b/raw/81667cb58db57cae093092748225c3a98a43ee1e/check-description.json'
+  
 
   if (environment === 'development') {
+    ENV.api_key = 'ro-GVxtueJXTaJAa5SY3dhn'
+    ENV.sample_data = 'https://gist.githubusercontent.com/Rio517/c523873cd4495456a88cac8f1860461b/raw/be008bc9ba648456c282228b463415f37b2373aa/checks.json'
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -48,6 +51,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.api_key = 'ro-pz3x1zy4ae63yhygraqe'
     // here you can enable a production-specific feature
   }
 
