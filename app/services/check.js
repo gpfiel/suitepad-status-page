@@ -6,10 +6,10 @@ import PromiseProxyMixin from '@ember/object/promise-proxy-mixin'
 import ObjectProxy from '@ember/object/proxy';
 import $ from 'jquery'
 const isProduction = ENV.environment === 'production';
+import { run } from '@ember/runloop';
 
 export default Service.extend({
   store: service(),
-  ajax: service(),
 
   descriptions: null,
 
@@ -34,7 +34,9 @@ export default Service.extend({
 
   getDecriptions() {
     $.getJSON(ENV.check_descriptions).then(data => {
-      this.set('descriptions', data)
+      run.next(() => {
+        this.set('descriptions', data)
+      })
     })
   }
 });
