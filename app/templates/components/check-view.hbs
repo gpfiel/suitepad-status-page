@@ -2,7 +2,7 @@
   <button class="close" {{action "close"}}><i class="material-icons large">close</i></button>
   <div class="col-sm-4 icon-check text-center">
     {{#if check.favicon_url}}
-      <img src={{check.favicon_url}} alt={{check.alias}}>
+      <img class="favicon-url" src={{check.favicon_url}} alt={{check.alias}}>
     {{/if}}
     <a target="_blank" rel="noopener" class="text-lowercase" href={{check.url}}>{{check.url}}</a>
   </div>
