@@ -6,21 +6,22 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | loading', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+  module("basic rendering", function() {
+    test("component specific CSS classes", async function(assert) {
+      await render(hbs`{{loading}}`);
 
-    await render(hbs`<Loading />`);
+      assert.dom(".loading").exists();
 
-    assert.equal(this.element.textContent.trim(), '');
+      const spinnerDiv = assert.dom("div.spinner")
+      spinnerDiv.exists();
+      spinnerDiv.hasClass('animated');
+      spinnerDiv.hasClass('bounce');
 
-    // Template block usage:
-    await render(hbs`
-      <Loading>
-        template block text
-      </Loading>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+      const iconElement = assert.dom("i")
+      iconElement.exists();
+      iconElement.hasClass('material-icons')
+      iconElement.hasClass('android')
+      iconElement.containsText("tablet_android");
+    });
   });
 });
