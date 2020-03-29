@@ -6,21 +6,11 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | table-th-sorter', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`<TableThSorter />`);
-
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <TableThSorter>
-        template block text
-      </TableThSorter>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+  test('component classes', async function(assert) {
+    this.set('sortBy', function(val) {});
+    await render(hbs`{{table-th-sorter sortBy=sortBy}}`);
+    assert.dom("th.noselect").exists();
+    assert.dom("div.sorting-arrows").exists();
+    assert.dom("i.material-icons.android").exists({count: 2});
   });
 });
