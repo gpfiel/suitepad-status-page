@@ -37,7 +37,7 @@ export default Model.extend({
       colour = 'red'
 
     return {
-      value: this.get('uptime') < 100 ? this.get('uptime').toFixed(2) : this.get('uptime'),
+      value: this.get('uptime') < 100 ? parseInt(this.get('uptime') * 100)/100 : this.get('uptime'),
       colour: colour
     }
   }),
