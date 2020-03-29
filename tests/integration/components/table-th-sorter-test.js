@@ -7,7 +7,7 @@ module('Integration | Component | table-th-sorter', function(hooks) {
   setupRenderingTest(hooks);
 
   test('component classes', async function(assert) {
-    this.set('sortBy', function(val) {});
+    this.set('sortBy', function() {});
     await render(hbs`{{table-th-sorter sortBy=sortBy}}`);
     assert.dom("th.noselect").exists();
     assert.dom("div.sorting-arrows").exists();
